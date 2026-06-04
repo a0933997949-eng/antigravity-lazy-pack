@@ -4,6 +4,10 @@
 
 ## 🔴 永久指示（絕對不可遺漏）
 
+### 0. 🔒 資訊安全與個資法合規最高原則（2026-06-04 新增）
+- **嚴禁主動推送至 GitHub 公開儲存庫**：未經使用者（長官）特別明確指示，禁止主動將任何專案資料、代碼、日誌或配置推送（push）至公開 GitHub 倉庫。
+- **遵守個資法第 27 條**：採行適當安全措施，防止個人資料洩漏。所有本機 project 必須第一時間建立 `.gitignore` 隔離 `input/`、`output/`，並在敏感檔案 Frontmatter 標記 `sensitive: true`。
+
 ### 1. 🚀 執行前必檢（2026-05-20/21 強制規則）
 - 每次執行任何 Claude 工作前，**第一步必須讀取並遵守 CLAUDE.md**：
   ```
@@ -55,6 +59,36 @@
 
 ## 📝 開工記錄
 
+#### 2026-06-04 — 開工記錄 (3)
+- 啟動時間：2026-06-04 19:01:09
+- 用戶指令：讀取並載入行為準則及記憶
+- 規則版本：ANTIGRAVITY.md v1.4
+- 執行狀態：✅ 已完成 (已補強環境並生成 5 大技能專案骨架)
+
+#### 2026-06-04 — 開工記錄 (2)
+- 啟動時間：2026-06-04 18:49:06
+- 用戶指令：開工
+- 規則版本：ANTIGRAVITY.md v1.4
+- 執行狀態：✅ 已開始
+
+#### 2026-06-04 — 開工記錄
+- 啟動時間：2026-06-04 14:57:00
+- 用戶指令：讀取並載入行為準則及記憶
+- 規則版本：ANTIGRAVITY.md v1.4
+- 執行狀態：✅ 已開始
+
+#### 2026-06-01 — 開工記錄 (2)
+- 啟動時間：2026-06-01 09:05:54
+- 用戶指令：開工
+- 規則版本：ANTIGRAVITY.md v1.4
+- 執行狀態：✅ 已開始
+
+#### 2026-06-01 — 開工記錄
+- 啟動時間：2026-06-01 06:48:53
+- 用戶指令：開工
+- 規則版本：ANTIGRAVITY.md v1.4
+- 執行狀態：✅ 已開始
+
 #### 2026-05-29 — 開工記錄
 - 啟動時間：2026-05-29 10:56:37
 - 用戶指令：開工
@@ -102,3 +136,27 @@
 - 用戶指令：開工
 - 規則版本：ANTIGRAVITY.md v1.2
 - 執行狀態：✅ 已開始
+
+---
+
+## NotebookLM MCP 維護紀錄（2026-05-30）
+
+### 版本
+- `notebooklm-mcp-cli` 目前版本：**0.6.13**（pip 安裝於 Python 3.14）
+- 正確執行路徑：`C:\Users\user\AppData\Roaming\Python\Python314\Scripts\nlm.exe`
+- uv 版本（`C:\Users\user\.local\bin\nlm.exe`）有 pydantic_core 衝突，**請勿使用**
+
+### 認證過期處理流程
+當 MCP 工具回傳 `Authentication expired` 時：
+
+1. 在 PowerShell 執行（注意要加 `&`）：
+   ```powershell
+   & "C:\Users\user\AppData\Roaming\Python\Python314\Scripts\nlm.exe" login --force
+   ```
+2. Chrome 自動開啟 → 選帳號 `a0933997949@gmail.com` → 完成授權
+3. 回到 Claude Cowork，呼叫 `refresh_auth` 工具套用新憑證
+
+### 升級指令
+```powershell
+pip install --upgrade notebooklm-mcp-cli
+```

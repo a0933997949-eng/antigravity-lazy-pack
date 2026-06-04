@@ -1,0 +1,11 @@
+# Isolate inputs and outputs containing sensitive or personal data (compliance with PDPA Article 27)
+input/
+output/
+
+# Exclude runtime environment/migration states and configs
+migration_state.json
+*.env
+.idea/
+.vscode/
+__pycache__/
+*.log
